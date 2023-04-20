@@ -15,7 +15,7 @@ const Header = styled.Text`
 function Home() {
   return (
     <Container>
-      <Header>Hello world</Header>
+      <Header>Hello</Header>
     </Container>
   );
 }
