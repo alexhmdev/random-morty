@@ -1,21 +1,8 @@
-import React from 'react';
-import styled from 'styled-components/native';
-
-const Container = styled.View`
-  flex: 1;
-  background-color: #fff;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Header = styled.Text`
-  font-size: 25px;
-`;
-
+import { Container } from '../Components';
 function Home() {
   return (
     <Container>
-      <Header>Hello</Header>
+      <Container flexDirection="row"></Container>
     </Container>
   );
 }
