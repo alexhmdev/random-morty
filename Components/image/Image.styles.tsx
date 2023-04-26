@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import { Props } from './Image';
+import styled from 'styled-components/native'
+import { type Props } from './Image'
 
 const roundedSizes = {
   sm: 2,
@@ -14,6 +14,6 @@ const StyledImage = styled.Image`
   resize-mode: ${(props: Props) => props.resizeMode ?? 'cover'};
   object-fit: ${(props: Props) => props.objectFit ?? 'cover'};
   border-radius: ${(props: Props) => roundedSizes[props.rounded] ?? 0}px;
-`;
+`
 
-export default StyledImage;
+export default StyledImage

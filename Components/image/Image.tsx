@@ -1,16 +1,16 @@
-import { ImageSourcePropType } from 'react-native/types';
-import StyledImage from './Image.styles';
+import { type ImageSourcePropType } from 'react-native/types'
+import StyledImage from './Image.styles'
 
-export type Props = {
-  source: ImageSourcePropType;
-  width: number;
-  height: number;
-  rounded?: 'sm' | 'md' | 'lg' | 'full';
-  resizeMode?: 'cover' | 'contain' | 'stretch' | 'repeat' | 'center';
-  objectFit?: 'cover' | 'contain' | 'fill' | 'scale-down';
-};
+export interface Props {
+  source: ImageSourcePropType
+  width: number
+  height: number
+  rounded?: 'sm' | 'md' | 'lg' | 'full'
+  resizeMode?: 'cover' | 'contain' | 'stretch' | 'repeat' | 'center'
+  objectFit?: 'cover' | 'contain' | 'fill' | 'scale-down'
+}
 
-const Image = ({ source, width, height, rounded, resizeMode, objectFit }: Props) => {
+const Image = ({ source, width, height, rounded, resizeMode, objectFit }: Props): React.ReactElement => {
   return (
     <StyledImage
       source={source}
@@ -20,7 +20,7 @@ const Image = ({ source, width, height, rounded, resizeMode, objectFit }: Props)
       resizeMode={resizeMode}
       objectFit={objectFit}
     />
-  );
-};
+  )
+}
 
-export default Image;
+export default Image
