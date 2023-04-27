@@ -2,8 +2,9 @@ import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Home from './pages/Home'
-import Characters from './pages/Characters'
+import CharactersPage from './pages/Characters'
 import { Header } from './components'
+import EpisodeDetails from './pages/EpisodeDetails'
 
 const Drawer = createDrawerNavigator()
 
@@ -30,7 +31,8 @@ export default function App (): React.ReactElement {
         drawerType: 'front'
       }}>
         <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Characters" component={Characters} />
+        <Drawer.Screen name="Characters" component={CharactersPage} />
+        <Drawer.Screen name="EpisodeDetails" component={EpisodeDetails}/>
       </Drawer.Navigator>
     </NavigationContainer>
   )

@@ -13,6 +13,7 @@ export interface Props {
   bgColor?: string
   width?: number
   height?: number
+  margin?: number
   padding?: number
   alignItems?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline'
   justifyContent?:
@@ -37,10 +38,11 @@ const Container = ({
   bgColor,
   width,
   height,
+  margin,
   padding,
   alignItems,
   justifyContent
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   return (
     <StyledContainer
       position={position}
@@ -54,6 +56,7 @@ const Container = ({
       bgColor={bgColor}
       width={width}
       height={height}
+      margin={margin}
       padding={padding}
       alignItems={alignItems}
       justifyContent={justifyContent}

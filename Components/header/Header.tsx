@@ -15,7 +15,7 @@ const Header = ({ navigation }: Props): React.ReactElement => {
     <Container flexDirection='row' justifyContent='space-between' alignItems='flex-end' padding={10} height={100} bgColor='#fff'>
         <Image source={require('../../assets/images/logo.png')} width={50} height={50}/>
       <TouchableOpacity onPress={() => { navigation.toggleDrawer() }}>
-        <Ionicons name={`${isDrawerOpen ? 'close' : 'menu'}`} size={30} color={'#a5a5a5'}/>
+        <Ionicons name={`${isDrawerOpen ? 'close' : 'menu'}`} size={30} color='#a5a5a5'/>
         </TouchableOpacity>
     </Container>
   )
