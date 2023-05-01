@@ -2,7 +2,7 @@ import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Home from './pages/Home'
-import CharactersPage from './pages/Characters'
+import CharactersPage from './pages/CharactersPage'
 import { Header } from './components'
 import EpisodeDetails from './pages/EpisodeDetails'
 

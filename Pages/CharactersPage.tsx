@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Container } from '../components'
+import { Container, TextInput } from '../components'
 import { getCharacters } from '../utils/api'
 import Character from '../components/character/Character'
 import { FlatList } from 'react-native-gesture-handler'
 import { type Characters, type Result } from '../models/characters.model'
+import { Text } from 'react-native'
 
 const CharactersPage = (): React.ReactElement => {
   const [charactersData, setCharactersData] = useState<Result[]>([])
@@ -14,7 +15,6 @@ const CharactersPage = (): React.ReactElement => {
     if (data.error) {
       alert('Error fetching characters' + JSON.stringify(data.error))
     }
-
     setCharactersData((current) => [...current, ...data.results])
   }
 
@@ -26,7 +26,12 @@ const CharactersPage = (): React.ReactElement => {
     fetchCharacters()
   }, [page])
   return (
-    <Container height={450}>
+    <Container flex={1}>
+      <Container flex={1}>
+        <Text>Hello world</Text>
+      {/* <TextInput placeholder="Search a character..." height={10} width={400}/> */}
+      </Container>
+    <Container flex={4}>
       <FlatList
         data={charactersData}
         renderItem={({ item }) => (
@@ -36,6 +41,7 @@ const CharactersPage = (): React.ReactElement => {
         numColumns={3}
         onEndReached={getMoreCharacters}
       />
+    </Container>
     </Container>
   )
 }
