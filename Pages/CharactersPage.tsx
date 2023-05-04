@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container, Image, TextInput } from '../components';
+import { Container, Image, Searchbar } from '../components';
 import { getCharacters } from '../utils/api';
 import Character from '../components/character/Character';
 import { FlatList } from 'react-native-gesture-handler';
@@ -8,6 +8,7 @@ import { type Characters, type Result } from '../models/characters.model';
 const CharactersPage = (): React.ReactElement => {
   const [charactersData, setCharactersData] = useState<Result[]>([]);
   const [page, setPage] = useState(1);
+  const [searchText, setSearchText] = useState<string>('');
 
   const fetchCharacters = async (): Promise<void> => {
     const data: Characters = await getCharacters(page);
@@ -36,13 +37,15 @@ const CharactersPage = (): React.ReactElement => {
             resizeMode="contain"
           />
         </Container>
-        <TextInput
+        <Searchbar
+          setText={setSearchText}
           placeholder="Search a character..."
           height={32}
           width={300}
+          value={searchText}
         />
       </Container>
-      <Container flex={4}>
+      <Container flex={3}>
         <FlatList
           data={charactersData}
           renderItem={({ item }) => (
